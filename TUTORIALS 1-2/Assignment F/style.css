@@ -1,0 +1,38 @@
+#wrapper {
+    background-color: aliceblue;
+    margin: 50px;
+}
+
+#banner {
+    margin-left: 2%;
+    margin-top: 2%;
+    width: 96%;
+    height: 400px;
+    object-fit: cover;
+    border: dashed 4px green;
+}
+
+body {
+    background-color: rgb(220, 236, 129);
+}
+
+h3 {
+    font-size: larger;
+    text-decoration: underline;
+    margin-left: 15px;
+}
+
+p {
+    margin-left: 25px;
+    background-color: rgb(220, 220, 220);
+    border: solid 2px black;
+    padding: 10px;
+}
+
+a:link {
+    color: blue;
+}
+
+a:hover {
+    color: green;
+}

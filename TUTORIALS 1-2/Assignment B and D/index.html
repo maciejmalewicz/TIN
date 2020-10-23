@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <form>
+
+            <label for="login" class="mandatory-label">First name:</label>
+            <input id="login" class="input-field" name="login" type="text"/><br>
+            <label for="password" class="mandatory-label">Password:</label>
+            <input id="password" class="input-field" name="password" type="password"/><br>
+
+            <label for="accept" class="mandatory-label">I accept the agreement:</label>
+            <input id="accept" name="accept" type="checkbox"/><br><br>
+
+            <label for="cars" class="additional-label">Choose a pet:</label>
+
+            <select name="cars" id="cars">
+            <option value="volvo">Dog</option>
+            <option value="saab">Cat</option>
+            <option value="mercedes">Bird</option>
+            <option value="audi">Frog</option>
+            </select><br>
+
+            <p class="mandatory-label">Select gender:</p>
+            <input type="radio" id="genderChoice1"
+             name="gender" value="email">
+            <label for="genderChoice1">Male</label>
+        
+            <input type="radio" id="genderChoice2"
+             name="gender" value="phone">
+            <label for="genderChoice2"></label>Female</label>
+        
+            <input type="radio" id="genderChoice3"
+             name="gender" value="mail">
+            <label for="genderChoice3">Don't wanna say</label>
+
+            <p class="additional-label">Write something about yourself</p>
+            <textarea class="input-field"></textarea>
+
+            <br>
+            <span>
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </span>
+        </form>
+
+    </body>    
+    
+</html>

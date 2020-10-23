@@ -1,0 +1,11 @@
+.input-field {
+    font-size: large;
+}
+
+.mandatory-label {
+    color: orange;
+}
+
+.additional-label {
+    color: greenyellow;
+}

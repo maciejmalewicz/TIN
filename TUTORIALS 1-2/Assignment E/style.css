@@ -1,0 +1,23 @@
+.column {
+    float: left;
+    width: 50%;
+}
+
+.text-container {
+    padding: 5px;
+}
+
+#img1 {
+    float: left;
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+#img2 {
+    float: right;
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+}
