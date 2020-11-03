@@ -1,0 +1,124 @@
+@font-face {
+    font-family: 'MyTextFont';
+    src: url("./fonts/SyneMono-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'MyHeaderFont';
+    src: url("./fonts/Oswald-VariableFont_wght.ttf");
+}
+
+
+body {
+    display: grid;
+    grid-template-rows: 20 100%;
+    background-color: rgb(255, 247, 137);
+}
+
+header {
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: 200px 50px;
+    grid-template-columns: 40% 20% 40%;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 300px 100%;
+}
+
+.banner {
+    margin-top: 20px;
+    max-width: 100%;
+    box-shadow: 6px 6px 5px rgb(26, 25, 25);
+    align-self: center;
+    rotate: 30%;
+    transform: rotate(10deg);
+    grid-row: 1;
+    grid-column: 2;
+}
+
+h1 {
+    text-align: center;
+    font-family: MyHeaderFont;
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.row-container {
+    display: grid;
+    grid-template-columns: 300px 100%;
+}
+
+.gallery {
+    grid-row: 1;
+    grid-template-rows: 33% 33% 33%;
+}
+
+#fig1 {
+    grid-row: 1;
+}
+
+#fig2 {
+    grid-row: 2;
+}
+
+#fig3 {
+    grid-row: 3;
+}
+
+.gallery-image {
+    max-height: 20%;
+    min-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+
+.text {
+    grid-column: 2;
+    column-count: 3;
+    max-width: 70%;
+    overflow: auto;
+}
+
+
+p {
+    overflow-wrap: break-word;
+    font-family: MyTextFont;
+}
+
+figcaption {
+    font-family: MyTextFont;
+}
+
+blockquote {
+    float: right;
+    width: 200px;
+    color: #030;
+    font-size: 26px;
+    line-height: 0.9;
+    font-style: italic;
+    font-family: MyHeaderFont;
+    padding: 13px;
+}
+
+footer {
+    background-color: aqua;
+    color: blueviolet;
+    text-align: center;
+}
+
+@media screen and (max-width: 800px){
+
+    .text {
+        column-count: 1;
+    }
+
+    .row-container {
+        flex-direction: column-reverse;
+        display: flex;
+    }
+
+}
