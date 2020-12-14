@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Webpack app</title>
+  </head>
+  <body>
+    <script src="main.js"></script>
+    <h1>Convert Distance</h1>
+    <input id="distance" type="number"/>
+    <select id="measure">
+        <option id="km">Kilometers</option>
+        <option id="m">Miles</option>
+    </select>
+    <button id="btn-dst" onclick="getDistance()">Convert</button>
+    <div id="distanceResult"></div>
+
+    <h1>Convert Temperature</h1>
+    <input id="degrees" type="number"/>
+    <select id="degreesMeasure">
+        <option id="celsius">Celsius</option>
+        <option id="kelvin">Kelvin</option>
+        <option id="fahrenheit">Fahrenheit</option>
+    </select>
+    <button id="btn-dgr" onclick="getTemperature()">Convert</button>
+    <div id="temperatureResult"></div>
+  </body>
+</html>
