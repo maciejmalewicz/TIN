@@ -1,0 +1,27 @@
+.header-background {
+  background-color: rgb(60, 60, 60);
+  color: white;
+  padding-top: 20px;
+}
+
+.no-margins{
+  margin: 0px;
+  padding: 0px;
+}
+
+.form-frame {
+  border-color: rgb(60, 60, 60);
+  border-width: 4px;
+  border-style: solid;
+  padding: 20px;
+}
+
+.form-element {
+  width: 100%;
+}
+
+.empty-space {
+  height: 50px;
+}
+
+

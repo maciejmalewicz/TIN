@@ -1,0 +1,54 @@
+<app-edit #edit [items]="ingredients" [getName]="getName" [createNew]="createNewIngredient" (itemChange)="onItemChange($event)">
+
+  <div *ngIf="ingredient != null" class="text-center">
+    <h3 *ngIf="ingredient.id != -1">Edititng {{ingredient.name}}</h3>
+    <h3 *ngIf="ingredient.id == -1">Creating {{ingredient.name}}</h3>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+
+          <label class="form-element">
+            Name:
+            <br/>
+            <input type="text" class="form-element" [(ngModel)]="ingredient.name">
+          </label>
+          <br/>
+
+          <label class="form-element">
+            Type:
+            <br/>
+            <input type="text" class="form-element" [(ngModel)]="ingredient.type"/>
+          </label>
+
+          <br/>
+          <div class="row">
+            <div class="col-1"></div>
+            <div class="col-3">
+              <button *ngIf="ingredient.id != -1" (click)="onSave()" class="btn btn-primary">Save</button>
+              <button *ngIf="ingredient.id == -1" (click)="onCreate()" class="btn btn-primary">Create</button>
+            </div>
+            <div class="col-4"></div>
+            <div class="col-3">
+              <button *ngIf="ingredient.id != -1" (click)="onDelete()" class="btn btn-danger" type="button">Delete</button>
+              <button *ngIf="ingredient.id == -1" (click)="onCancel()" class="btn btn-danger" type="button">Cancel</button>
+            </div>
+            <div class="col-1"></div>
+          </div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+
+  </div>
+
+  <div *ngIf="ingredient == null" class="text-center">
+    <h3>Select ingredient to edit or add new</h3>
+  </div>
+
+</app-edit>
+
+
+<app-error-modal #error>
+  Something went wrong! Check your internet connection!
+</app-error-modal>
+
+

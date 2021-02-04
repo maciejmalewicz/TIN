@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row top-padding">
+    <div class="col-sm">
+      <table style="width:100%">
+        <tr>
+          <th>Name</th>
+          <th>Ingredients</th>
+          <th>Price</th>
+        </tr>
+        <tr *ngFor="let kebab of kebabs">
+          <td>{{kebab.meal_name}}</td>
+          <td>{{kebab.ingredients | ingredients}}</td>
+          <td>{{kebab.meal_cost | price}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+

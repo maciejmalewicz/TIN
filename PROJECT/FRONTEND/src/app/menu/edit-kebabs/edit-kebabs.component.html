@@ -1,0 +1,108 @@
+ <app-edit #edit [items]="kebabs" [getName]="getName" [createNew]="createNewKebab" (itemChange)="onItemChange($event)">
+
+    <div *ngIf="kebab != null" class="text-center">
+      <h3 *ngIf="kebab.id != -1">Edititng {{kebab.meal_name}}</h3>
+      <h3 *ngIf="kebab.id == -1">Creating {{kebab.meal_name}}</h3>
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+
+            <label class="form-element">
+              Name:
+              <br/>
+              <input type="text" class="form-element" [(ngModel)]="kebab.meal_name">
+            </label>
+            <br/>
+
+            <label class="form-element">
+              Price:
+              <br/>
+              <div class="text-left">
+                <input type="number" class="num-input" [(ngModel)]="price.primary" (change)="onPriceChange()"/>
+                .
+                <input type="number" class="num-input" [(ngModel)]="price.secondary" (change)="onPriceChange()"/>
+                <b> = {{(price.primary * 100 + price.secondary) | price}}</b>
+              </div>
+            </label>
+
+            <label class="form-element">
+              Description:
+              <br/>
+              <textarea class="form-element" name="meal_description" [(ngModel)]="kebab.meal_description"></textarea>
+            </label>
+
+            <label class="form-element">
+              Ingredients:
+            </label>
+              <br/>
+              <table style="width:100%">
+                <tr>
+                  <th>Name</th>
+                  <th>Amount</th>
+                  <th>Delete</th>
+                  <th>Edit</th>
+                </tr>
+                <tr *ngFor="let ingredient of kebab.ingredients; let i = index">
+                  <td>
+                    <div *ngIf="currentlyEdited == i">
+                      <select [(ngModel)]="ingredient.ingredient_name">
+                        <option *ngFor="let ingredientChoice of ingredients">{{ingredientChoice.name}}</option>
+                      </select>
+                    </div>
+                    <div *ngIf="currentlyEdited != i">
+                      {{ingredient.ingredient_name}}
+                    </div>
+                  </td>
+                  <td>
+                    <div *ngIf="currentlyEdited == i">
+                      <select [(ngModel)]="ingredient.amount">
+                        <option>SMALL</option>
+                        <option>MEDIUM</option>
+                        <option>HUGE</option>
+                      </select>
+                    </div>
+                    <div *ngIf="currentlyEdited != i">
+                      {{ingredient.amount}}
+                    </div>
+                  </td>
+                  <td><button (click)="onDeleteIngredient($event, ingredient)">Delete</button></td>
+                  <td><button (click)="onEdit(i)">Edit</button></td>
+                </tr>
+              </table>
+
+              <!-- todo class!!! -->
+              <div class="with-padding">
+                <button (click)="onAddIngredient()" [disabled]="!canAddIngredient()" class="form-element btn btn-success">Add new ingredient</button>
+              </div>
+
+
+
+
+            <div class="row with-full-padding">
+              <div class="col-1"></div>
+              <div class="col-3">
+                <button *ngIf="kebab.id != -1" (click)="onSave()" class="btn btn-primary">Save</button>
+                <button *ngIf="kebab.id == -1" (click)="onCreate()" class="btn btn-primary">Create</button>
+              </div>
+              <div class="col-4"></div>
+              <div class="col-3">
+                <button *ngIf="kebab.id != -1" (click)="onDelete()" class="btn btn-danger" type="button">Delete</button>
+                <button *ngIf="kebab.id == -1" (click)="onCancel()" class="btn btn-danger" type="button">Cancel</button>
+              </div>
+              <div class="col-1"></div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+      </div>
+
+    </div>
+
+    <div *ngIf="kebab == null" class="text-center">
+      <h3>Select kebab to edit or add new</h3>
+    </div>
+
+</app-edit>
+
+<app-error-modal #error>
+  Something went wrong! Check your internet connection!
+</app-error-modal>

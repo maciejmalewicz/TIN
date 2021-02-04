@@ -1,0 +1,42 @@
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="./home">Kebab Menu Creator</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{'active': isUserOn('/menu/overview')}" aria-current="page" routerLink="./overview">Overview</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{'active': isUserOn('/menu/kebabs')}" routerLink="./kebabs">Edit kebabs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{'active': isUserOn('/menu/ingredeints')}" routerLink="./ingredients">Edit ingredients</a>
+        </li>
+      </ul>
+      <ul *ngIf="accountData == null" class="navbar-nav my-2 my-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="../login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="../register">Register</a>
+        </li>
+      </ul>
+      <span *ngIf="accountData != null" class="my-2 my-lg-0">{{accountData.firstName}} {{accountData.lastName}}</span>
+
+    </div>
+  </div>
+</nav>
+
+
+<app-error-modal #error>
+  Couldn't connect to the server! Check your internet connection!
+</app-error-modal>
+
+<!-- The app itself -->
+<router-outlet></router-outlet>
+

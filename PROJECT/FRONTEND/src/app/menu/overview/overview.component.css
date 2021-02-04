@@ -1,0 +1,17 @@
+table {
+  border: 2px solid rgb(60, 60, 60);
+}
+
+tr {
+  border: 2px solid rgb(60, 60, 60);
+}
+
+td {
+  border: 1px solid rgb(60, 60, 60);
+}
+
+th {
+  border: 2px solid rgb(60, 60, 60);
+}
+
+

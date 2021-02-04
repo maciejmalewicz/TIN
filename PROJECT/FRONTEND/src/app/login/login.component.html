@@ -1,0 +1,35 @@
+
+<div class="container-fluid no-margins">
+  <div class="row header-background">
+    <div class ="col-sm text-center">
+      <h1>Welcome to Kebab Menu Creator!</h1>
+    </div>
+  </div>
+  <div class="row empty-space">
+    <div class="col-sm"></div>
+  </div>
+  <div class="row">
+    <div class="col-4"></div>
+    <div class ="col-4 text-center form-frame">
+
+      <label class="form-element">
+        Login:
+        <br/>
+        <input [(ngModel)]="accountData.login" type="text" class="form-element"/>
+      </label>
+      <br/>
+      <label class="form-element">
+        Password:
+        <br/>
+        <input [(ngModel)]="accountData.password" type="password" class="form-element"/>
+      </label>
+      <br/>
+      <button (click)="onLogIn()" class="btn btn-lg btn-primary">Log in</button>
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>
+
+<app-error-modal #error>
+  Something went wrong! Make sure that your login and password are typed correctly!
+</app-error-modal>
